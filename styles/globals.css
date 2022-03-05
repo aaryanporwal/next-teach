@@ -17,7 +17,28 @@ a {
 * {
   box-sizing: border-box;
 } */
+@font-face {
+  font-family: "GT Walsheim Pro";
+  src: local("GT Walsheim Pro Regular"), local("GTWalsheimProRegular"),
+    url(https://cloud-ej2vwom8u-hack-club-bot.vercel.app/0gt_walsheim_medium.woff2)
+      format("woff2"),
+    url(https://cloud-l7gf104g2-hack-club-bot.vercel.app/0gt_walsheim_medium.woff)
+      format("woff"),
+    url(https://cloud-ej2vwom8u-hack-club-bot.vercel.app/1gt_walsheim_medium.ttf)
+      format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "liga", "clig";
+  font-variant-ligatures: common-ligatures;
+}
 
+html,
 body {
-  @apply bg-purple-300;
+  padding: 0;
+  margin: 0;
+  font-family: "GT Walsheim Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  @apply bg-zinc-800;
+  @apply text-white;
 }
