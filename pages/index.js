@@ -1,22 +1,20 @@
-import { SubjectList } from "../components/SubjectList";
 import { useState, useEffect } from "react";
+import { Table } from "../components/Table";
 
 import { initializeApp } from "firebase/app";
+import { getDatabase, ref, onValue } from "firebase/database";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDlX3AGMl0hZ_BiwAbDSPQzw3vTHhfEpzE",
-  authDomain: "geoloco-a32e3.firebaseapp.com",
-  databaseURL: "https://geoloco-a32e3-default-rtdb.firebaseio.com",
-  projectId: "geoloco-a32e3",
-  storageBucket: "geoloco-a32e3.appspot.com",
-  messagingSenderId: "501684827293",
-  appId: "1:501684827293:web:b7bed780159ffe6b459074",
-  measurementId: "G-ET9VK0C9HH",
+  apiKey: process.env.NEXT_PUBLIC_apiKey,
+  authDomain: process.env.NEXT_PUBLIC_authDomain,
+  databaseURL: process.env.NEXT_PUBLIC_databaseURL,
+  projectId: process.env.NEXT_PUBLIC_projectId,
+  storageBucket: process.env.NEXT_PUBLIC_storageBucket,
+  messagingSenderId: process.env.NEXT_PUBLIC_messagingSenderId,
+  appId: process.env.NEXT_PUBLIC_appId,
+  measurementId: process.env.NEXT_PUBLIC_measurementId,
 };
-
 const app = initializeApp(firebaseConfig);
-
-import { getDatabase, ref, onValue } from "firebase/database";
 
 export default function Home() {
   const [attendance, setAttendance] = useState([]);
@@ -34,11 +32,10 @@ export default function Home() {
 
   return (
     <div>
-      <h1 className="text-3xl text-center mt-10">Teacher&apos;s Portal</h1>
-      
-      <SubjectList subjectArray={subjectArray} />
-
-      {/* <pre>{JSON.stringify(attendance, null, "\t")}</pre> */}
+      <h1 className="text-5xl underline text-center mt-8">
+        Teacher&apos;s Portal
+      </h1>
+      <Table subjectArray={subjectArray} title="Subjects" />
     </div>
   );
 }

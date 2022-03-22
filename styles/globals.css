@@ -42,3 +42,7 @@ body {
   @apply bg-zinc-800;
   @apply text-white;
 }
+
+li {
+  display: list-item !important;
+}
