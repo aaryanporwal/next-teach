@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Table } from "../components/Table";
-
+import ReactJson from "react-json-view";
 import { initializeApp } from "firebase/app";
 import { getDatabase, ref, onValue } from "firebase/database";
 
@@ -35,7 +35,18 @@ export default function Home() {
       <h1 className="text-5xl underline text-center mt-8">
         Teacher&apos;s Portal
       </h1>
-      <Table subjectArray={subjectArray} title="Subjects" />
+      {/* <Table subjectArray={subjectArray} title="Subjects" /> */}
+      <div className="flex items-center justify-center mt-16">
+        <ReactJson
+          src={attendance}
+          theme="monokai"
+          name="Click here to view Subject wise attendance"
+          collapsed={true}
+          displayDataTypes={false}
+          displayObjectSize={false}
+          enableClipboard={false}
+        />
+      </div>
     </div>
   );
 }
