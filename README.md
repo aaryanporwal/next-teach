@@ -1,3 +1,13 @@
+# Teacher's portal for Geo-loco
+
+Live Demo: https://next-teach.netlify.app/.
+
+This repository is a part of the location based attendance application (Geo-loco), which provides a portal for teachers to view the attendance of the students in realtime.
+
+Link to Geo-loco project: https://github.com/aaryanporwal/Geo-loco.
+
+<details>
+<summary> Setup Instructions </summary>
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
@@ -32,3 +42,4 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+</details>
