@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { Table } from "../components/Table";
-import ReactJson from "react-json-view";
+// import { Table } from "../components/Table";
+import ReactJson from "react-json-view"; 
 import { initializeApp } from "firebase/app";
 import { getDatabase, ref, onValue } from "firebase/database";
 
@@ -17,7 +17,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 export default function Home() {
-  const [attendance, setAttendance] = useState([]);
   useEffect(() => {
     const db = getDatabase();
     const AttendanceRef = ref(db, "Attendance");
@@ -25,6 +24,7 @@ export default function Home() {
       setAttendance(snapshot.val());
     });
   }, []);
+  const [attendance, setAttendance] = useState([]);
 
   console.log(JSON.stringify(attendance, null, 2));
 
