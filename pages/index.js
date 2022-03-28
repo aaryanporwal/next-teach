@@ -1,20 +1,22 @@
 import { useState, useEffect } from "react";
 // import { Table } from "../components/Table";
-import ReactJson from "react-json-view"; 
 import { initializeApp } from "firebase/app";
 import { getDatabase, ref, onValue } from "firebase/database";
+import dynamic from "next/dynamic";
+const DynamicReactJson = dynamic(import("react-json-view"), { ssr: false });
 
 const firebaseConfig = {
-  apiKey: process.env.NEXT_PUBLIC_apiKey,
-  authDomain: process.env.NEXT_PUBLIC_authDomain,
-  databaseURL: process.env.NEXT_PUBLIC_databaseURL,
-  projectId: process.env.NEXT_PUBLIC_projectId,
-  storageBucket: process.env.NEXT_PUBLIC_storageBucket,
-  messagingSenderId: process.env.NEXT_PUBLIC_messagingSenderId,
-  appId: process.env.NEXT_PUBLIC_appId,
-  measurementId: process.env.NEXT_PUBLIC_measurementId,
+  apiKey: "AIzaSyDlX3AGMl0hZ_BiwAbDSPQzw3vTHhfEpzE",
+  authDomain: "geoloco-a32e3.firebaseapp.com",
+  databaseURL: "https://geoloco-a32e3-default-rtdb.firebaseio.com",
+  projectId: "geoloco-a32e3",
+  storageBucket: "geoloco-a32e3.appspot.com",
+  messagingSenderId: "501684827293",
+  appId: "1:501684827293:web:b7bed780159ffe6b459074",
+  measurementId: "G-ET9VK0C9HH",
 };
-const app = initializeApp(firebaseConfig);
+
+initializeApp(firebaseConfig);
 
 export default function Home() {
   useEffect(() => {
@@ -37,7 +39,7 @@ export default function Home() {
       </h1>
       {/* <Table subjectArray={subjectArray} title="Subjects" /> */}
       <div className="flex items-center justify-center mt-16">
-        <ReactJson
+        <DynamicReactJson
           src={attendance}
           theme="monokai"
           name="Click here to view Subject wise attendance"
